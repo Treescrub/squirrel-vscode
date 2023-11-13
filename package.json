@@ -1,0 +1,61 @@
+{
+	"name": "squirrel-vscode",
+	"displayName": "Squirrel LSP",
+	"description": "Squirrel language server",
+	"author": "Treescrub",
+	"version": "0.0.1",
+	"repository": "https://github.com/Treescrub/squirrel-vscode",
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^8.1.0"
+	},
+	"main": "./out/extension.js",
+	"devDependencies": {
+		"@types/vscode": "^1.75.1",
+		"@vscode/test-electron": "^2.2.3",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "^16.18.34",
+		"@typescript-eslint/eslint-plugin": "^5.54.0",
+		"@typescript-eslint/parser": "^5.54.0",
+		"eslint": "^8.35.0",
+		"mocha": "^9.2.1",
+		"typescript": "^5.1.3"
+	},
+	"scripts": {
+		"compile": "tsc -p ./"
+	},
+	"contributes": {
+		"languages": [{
+			"id": "squirrel",
+			"aliases": [
+				"Squirrel",
+				"squirrel"
+			],
+			"extensions": [
+				".nut"
+			]
+		}],
+		"commands": [
+			{
+				"command": "squirrel-vscode.helloworld",
+				"title": "Hello World!"
+			}
+		],
+		"configuration":{
+			"title": "Squirrel",
+			"properties": {
+				"squirrel.serverPath": {
+					"scope": "machine-overridable",
+					"type": "string",
+					"default": "",
+					"description": "Absolute path to the language server executable"
+				}
+			}
+		}
+	},
+	"activationEvents": [
+		"onLanguage:squirrel"
+	]
+}
