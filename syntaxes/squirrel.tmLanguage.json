@@ -1,0 +1,282 @@
+{
+    "scopeName": "source.squirrel",
+    "repository": {
+        "line_comment": {
+            "name": "comment.line.squirrel",
+            "match": "(//|#).*",
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.comment.squirrel"
+                }
+            }
+        },
+        "block_comment": {
+            "name": "comment.block.squirrel",
+            "begin": "(/\\*)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.comment.squirrel"
+                }
+            },
+            "end": "(\\*/)",
+            "endCaptures": {
+                "1": {
+                    "name": "punctuation.definition.comment.squirrel"
+                }
+            }
+        },
+        "if_else": {
+            "name": "keyword.control.conditional.squirrel",
+            "match": "\\b(if|else)\\b"
+        },
+        "control_keywords": {
+            "name": "keyword.control.squirrel",
+            "match": "\\b(while|do|break|continue|return|for|foreach|try|catch|throw|yield|resume|switch|case|default)\\b"
+        },
+        "language_constants": {
+            "name": "constant.language.squirrel",
+            "match": "\\b(true|false|null|__LINE__|__FILE__)\\b"
+        },
+        "storage_modifiers": {
+            "name": "storage.modifier.squirrel",
+            "match": "\\b(static|local|const)\\b"
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.other.operator.squirrel",
+                    "match": "\\b(in|typeof|clone|instanceof|rawcall)\\b"
+                },
+                {
+                    "name": "keyword.operator.delete.squirrel",
+                    "match": "\\b(delete)\\b"
+                },
+                {
+                    "name": "keyword.operator.arithmetic.squirrel keyword.operator.assignment.squirrel",
+                    "match": "(\\+=|-=|\\*=|\\/=|%=|\\+\\+|--)"
+                },
+                {
+                    "name": "keyword.operator.assignment.squirrel",
+                    "match": "(=)"
+                },
+                {
+                    "name": "keyword.operator.arithmetic.squirrel",
+                    "match": "(\\+|-|\\*|\\/|%)"
+                },
+                {
+                    "name": "keyword.operator.logical.squirrel",
+                    "match": "(&&|\\|\\||!)"
+                },
+                {
+                    "name": "keyword.operator.bitwise.squirrel",
+                    "match": "(&|\\||\\^|~|<<|>>|>>>)"
+                }
+            ]
+        },
+        "parens": {
+            "name": "meta.parens.squirrel",
+            "begin": "\\(",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.parens.begin.squirrel"
+                }
+            },
+            "end": "\\)",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.parens.end.squirrel"
+                }
+            },
+            "patterns": [
+                { "include": "#code" }
+            ]
+        },
+        "block": {
+            "name": "meta.block.squirrel",
+            "begin": "{",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.block.begin.squirrel"
+                }
+            },
+            "end": "}",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.block.end.squirrel"
+                }
+            },
+            "patterns": [
+                { "include": "#code" }
+            ]
+        },
+        "array": {
+            "name": "meta.brackets.squirrel",
+            "begin": "\\[",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.section.brackets.begin.squirrel"
+                }
+            },
+            "end": "\\]",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.section.brackets.end.squirrel"
+                }
+            },
+            "patterns": [
+                { "include": "#code" }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.squirrel meta.string.squirrel",
+                    "match": "(\")(.*?)(\")",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.string.begin.squirrel"
+                        },
+                        "3": {
+                            "name": "punctuation.definition.string.end.squirrel"
+                        }
+                    }
+                },
+                {
+                    "name": "string.quoted.single.squirrel meta.string.squirrel",
+                    "match": "(')(.*?)(')",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.string.begin.squirrel"
+                        },
+                        "3": {
+                            "name": "punctuation.definition.string.end.squirrel"
+                        }
+                    }
+                }
+            ]
+        },
+        "number": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.decimal.squirrel",
+                    "match": "\\b(-?\\d+\\.\\d+)\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.decimal.squirrel",
+                    "match": "\\b([1-9]\\d*|\\d)\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.octal.squirrel",
+                    "match": "\\b(0[0-7]+)\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.hexadecimal.squirrel",
+                    "match": "\\b(0x\\h+)\\b"
+                }
+            ]
+        },
+        "function_declare": {
+            "patterns": [
+                {
+                    "name": "storage.type.function keyword.declaration.function",
+                    "match": "\\b(constructor)\\b"
+                },
+                {
+                    "name": "storage.type.function keyword.declaration.function",
+                    "match": "\\b(function)\\b"
+                }
+            ]
+        },
+        "enum": {
+            "match": "\\b(enum)\\s+([_a-zA-Z][_a-zA-Z0-9]*)\\s*{",
+            "captures": {
+                "1": {
+                    "name": "storage.type.enum.squirrel keyword.declaration.enum.squirrel"
+                },
+                "2": {
+                    "name": "entity.name.type.enum.squirrel"
+                }
+            }
+        },
+        "class": {
+            "patterns": [
+                {
+                    "match": "\\b(class)\\s+([_a-zA-Z][_a-zA-Z0-9]*)",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.class.squirrel keyword.declaration.class.squirrel"
+                        },
+                        "2": {
+                            "name": "entity.name.class.squirrel"
+                        }
+                    }
+                },
+                {
+                    "name": "storage.type.class.squirrel keyword.declaration.class.squirrel",
+                    "match": "\\b(class)(?=\\s*{)\\b"
+                }
+            ]
+        },
+        "class_access": {
+            "name": "variable.language.squirrel",
+            "match": "\\b(this|base)\\b"
+        },
+        "punctuation": {
+            "patterns": [
+                {
+                    "name": "punctuation.separator.squirrel",
+                    "match": ","
+                },
+                {
+                    "name": "punctuation.terminator.squirrel",
+                    "match": ";"
+                },
+                {
+                    "name": "punctuation.accessor.squirrel",
+                    "match": "(::|\\.)"
+                }
+            ]
+        },
+        "identifier": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.squirrel meta.function-call.squirrel",
+                    "match": "\\b(?<=function\\s+)([_a-zA-Z][_a-zA-Z0-9]*)\\b"
+                },
+                {
+                    "name": "entity.name.function.squirrel meta.function-call.squirrel",
+                    "match": "\\b([_a-zA-Z][_a-zA-Z0-9]*)(?=\\s*\\()\\b"
+                },
+                {
+                    "name": "variable.other.squirrel",
+                    "match": "\\b([_a-zA-Z][_a-zA-Z0-9]*)\\b"
+                }
+            ]
+        },
+        "code": {
+            "patterns": [
+                { "include": "#line_comment" },
+                { "include": "#block_comment" },
+                { "include": "#if_else" },
+                { "include": "#control_keywords" },
+                { "include": "#language_constants" },
+                { "include": "#storage_modifiers" },
+                { "include": "#operators" },
+                { "include": "#function_declare" },
+                { "include": "#enum" },
+                { "include": "#class" },
+                { "include": "#class_access" },
+                { "include": "#parens" },
+                { "include": "#block" },
+                { "include": "#punctuation" },
+                { "include": "#array" },
+                { "include": "#string" },
+                { "include": "#number" },
+                { "include": "#identifier" }
+            ]
+        }
+    },
+    "patterns": [
+        { "include": "#code" }
+    ]
+}

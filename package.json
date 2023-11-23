@@ -37,6 +37,13 @@
 				".nut"
 			]
 		}],
+		"grammars": [
+			{
+				"language": "squirrel",
+				"scopeName": "source.squirrel",
+				"path": "./syntaxes/squirrel.tmLanguage.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "squirrel-vscode.helloworld",
