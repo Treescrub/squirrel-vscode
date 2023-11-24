@@ -201,7 +201,7 @@
         "class": {
             "patterns": [
                 {
-                    "match": "\\b(class)\\s+([_a-zA-Z][_a-zA-Z0-9]*)",
+                    "match": "\\b(class)\\s+((?:::)?[_a-zA-Z][_a-zA-Z0-9]*(?:[::|\\.][_a-zA-Z][_a-zA-Z0-9]*)*)",
                     "captures": {
                         "1": {
                             "name": "storage.type.class.squirrel keyword.declaration.class.squirrel"
