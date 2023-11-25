@@ -35,7 +35,8 @@
 			],
 			"extensions": [
 				".nut"
-			]
+			],
+			"configuration": "./language-configuration.json"
 		}],
 		"grammars": [
 			{
