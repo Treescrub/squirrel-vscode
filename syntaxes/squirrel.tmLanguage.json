@@ -181,11 +181,26 @@
         "function_declare": {
             "patterns": [
                 {
-                    "name": "storage.type.function keyword.declaration.function",
+                    "name": "storage.type.function.squirrel keyword.declaration.function.squirrel",
                     "match": "\\b(constructor)\\b"
                 },
                 {
-                    "name": "storage.type.function keyword.declaration.function",
+                    "match": "\\b(function)[\n\\s]*([_a-zA-Z][_a-zA-Z0-9]*(?:(?:::[_a-zA-Z][_a-zA-Z0-9]*)+)?)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "storage.type.function.squirrel keyword.declaration.function.squirrel"
+                        },
+                        "2": {
+                            "name": "entity.name.function.squirrel"
+                        }
+                    }
+                },
+                {
+                    "name": "storage.type.function.squirrel keyword.declaration.function.squirrel",
+                    "match": "\\b(function)(?=[\n\\s]*\\()"
+                },
+                {
+                    "name": "storage.type.function.squirrel keyword.declaration.function.squirrel",
                     "match": "\\b(function)\\b"
                 }
             ]
