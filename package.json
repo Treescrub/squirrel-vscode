@@ -62,8 +62,5 @@
 				}
 			}
 		}
-	},
-	"activationEvents": [
-		"onLanguage:squirrel"
-	]
+	}
 }
