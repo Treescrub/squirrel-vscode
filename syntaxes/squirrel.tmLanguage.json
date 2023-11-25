@@ -1,5 +1,8 @@
 {
     "scopeName": "source.squirrel",
+    "patterns": [
+        { "include": "#code" }
+    ],
     "repository": {
         "line_comment": {
             "name": "comment.line.squirrel",
@@ -275,8 +278,5 @@
                 { "include": "#identifier" }
             ]
         }
-    },
-    "patterns": [
-        { "include": "#code" }
-    ]
+    }
 }
