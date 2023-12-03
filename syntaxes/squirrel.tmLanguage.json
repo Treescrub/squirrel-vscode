@@ -60,7 +60,7 @@
                 },
                 {
                     "name": "keyword.operator.assignment.squirrel",
-                    "match": "(=)"
+                    "match": "(=|<-)"
                 },
                 {
                     "name": "keyword.operator.arithmetic.squirrel",
