@@ -45,6 +45,12 @@
 				"path": "./syntaxes/squirrel.tmLanguage.json"
 			}
 		],
+		"snippets": [
+			{
+				"language": "squirrel",
+				"path": "./snippets.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "squirrel-vscode.helloworld",

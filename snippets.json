@@ -1,0 +1,82 @@
+{
+    "Switch Statement": {
+        "prefix": "switch",
+        "body": [
+            "switch($1) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "if($1) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "Else Statement": {
+        "prefix": "else",
+        "body": [
+            "else($1) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "Try Catch Statement": {
+        "prefix": ["try", "try catch"],
+        "body": [
+            "try {",
+            "\t$1",
+            "} catch($2) {",
+            "\t$3",
+            "}"
+        ]
+    },
+    "Const Statement": {
+        "prefix": "const",
+        "body": [
+            "const $1 = $2"
+        ]
+    },
+    "Enum Statement": {
+        "prefix": "enum",
+        "body": [
+            "enum $1 {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "Foreach Loop": {
+        "prefix": "foreach",
+        "body": [
+            "foreach(${2:value} in ${1:container}) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "For Loop": {
+        "prefix": "for",
+        "body": [
+            "for($1; $2; $3) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "While Loop": {
+        "prefix": "while",
+        "body": [
+            "while($1) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "Do While Loop": {
+        "prefix": "do while",
+        "body": [
+            "do {",
+            "\t$0",
+            "} while($1)"
+        ]
+    }
+}
