@@ -65,6 +65,24 @@
 					"type": "string",
 					"default": "",
 					"description": "Absolute path to the language server executable"
+				},
+				"squirrel.update.autoUpdateLanguageServer": {
+					"scope": "application",
+					"type": "boolean",
+					"default": true,
+					"description": "Automatically check for new language server versions and download them"
+				},
+				"squirrel.update.autoUpdatePath": {
+					"scope": "application",
+					"type": "string",
+					"default": "",
+					"description": "Path to automatically download new language server versions"
+				},
+				"squirrel.debug.debugMessages": {
+					"scope": "application",
+					"type": "boolean",
+					"default": false,
+					"description": "Print debug messages"
 				}
 			}
 		}
