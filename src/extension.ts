@@ -1,4 +1,3 @@
-import * as path from 'path';
 import { workspace, ExtensionContext, window, commands } from 'vscode';
 import { existsSync } from 'fs';
 
@@ -13,14 +12,6 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
 	console.log("Activated squirrel-vscode extension");
-
-	window.showInformationMessage("Loaded!");
-
-	let disposable = commands.registerCommand("squirrel-vscode.helloworld", () => {
-		window.showInformationMessage("Hi ;)");
-	});
-
-	context.subscriptions.push(disposable);
 
 	const serverPath = getServerPath();
 
@@ -74,7 +65,7 @@ export function deactivate(): Thenable<void> | undefined {
 }
 
 function getServerPath(): string {
-	let path = workspace.getConfiguration("squirrel").get("serverPath") as string;
+	let path = workspace.getConfiguration("squirrel").get("server.path") as string;
 
 	if(path.length > 0) {
 		return path;
