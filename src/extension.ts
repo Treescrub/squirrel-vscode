@@ -27,11 +27,11 @@ export function activate(context: ExtensionContext) {
 	const serverOptions: ServerOptions = {
 		run: {
 			command: serverPath,
-			transport: TransportKind.stdio,
+			transport: TransportKind.ipc,
 		},
 		debug: {
 			command: serverPath,
-			transport: TransportKind.stdio,
+			transport: TransportKind.ipc,
 		}
 	};
 
