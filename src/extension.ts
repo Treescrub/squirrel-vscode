@@ -37,7 +37,7 @@ export function activate(context: ExtensionContext) {
 
 	const clientOptions: LanguageClientOptions = {
 		// Register for Squirrel files
-		documentSelector: [{scheme: 'file', language: 'squirrel'}],
+		documentSelector: [{language: 'squirrel'}],
 		synchronize: {
 			// Notify the server about file changes to .nut files in the workspace
 			fileEvents: workspace.createFileSystemWatcher('**/.nut')
