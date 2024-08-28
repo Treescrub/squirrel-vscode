@@ -50,7 +50,7 @@
     "Foreach Loop": {
         "prefix": "foreach",
         "body": [
-            "foreach(${2:value} in ${1:container}) {",
+            "foreach(${1:value} in ${2:object}) {",
             "\t$0",
             "}"
         ]
