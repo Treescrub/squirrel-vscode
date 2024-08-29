@@ -53,7 +53,7 @@ export function activate(context: ExtensionContext) {
 
 	client.start();
 
-	window.showInformationMessage("Starting client!");
+	console.log("Starting client!");
 }
 
 export function deactivate(): Thenable<void> | undefined {
