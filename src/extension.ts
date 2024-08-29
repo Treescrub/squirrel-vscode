@@ -20,18 +20,18 @@ export function activate(context: ExtensionContext) {
 		return;
 	}
 	if(!existsSync(serverPath)) {
-		window.showErrorMessage("Bad server path: \"${serverPath}\"")
+		window.showErrorMessage(`Bad server path: \"${serverPath}\"`)
 		return;
 	}
 
 	const serverOptions: ServerOptions = {
 		run: {
 			command: serverPath,
-			transport: TransportKind.ipc,
+			transport: TransportKind.stdio,
 		},
 		debug: {
 			command: serverPath,
-			transport: TransportKind.ipc,
+			transport: TransportKind.stdio,
 		}
 	};
 
@@ -51,9 +51,9 @@ export function activate(context: ExtensionContext) {
 		clientOptions
 	);
 
-	client.start();
-
 	console.log("Starting client!");
+
+	client.start();
 }
 
 export function deactivate(): Thenable<void> | undefined {
